@@ -20,15 +20,15 @@ return(
 
         <form onSubmit={loginSubmit}>
             <label>UserName:</label>
-            <input type ="text" required placeholder="Enter your usnername" value={username} onChange={(e)=>setUsername(e.target.value)}/>
+            <input type ="text" required placeholder="Enter your usnername." value={username} onChange={(e)=>setUsername(e.target.value)}/>
              <br></br>
               <br></br>
              <label>Email:</label>
-            <input type ="email" required placeholder="Enter your email id" value={email} onChange={(e)=>setEmail(e.target.value)}/>
+            <input type ="email" required placeholder="Enter your email id." value={email} onChange={(e)=>setEmail(e.target.value)}/>
             <br></br>
              <br></br>
             <label>Passcode:</label>
-            <input type ="password" required placeholder="Enter your Password" value={password} onChange={(e)=>setPassword(e.target.value)}/>
+            <input type ="password" required placeholder="Enter your Password." value={password} onChange={(e)=>setPassword(e.target.value)}/>
                <br></br>
                 <br></br>
             <button type = "submit">Login</button>
