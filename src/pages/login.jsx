@@ -15,7 +15,7 @@ function loginSubmit(e){
 return(
     <div >
         <h1>ProductReviews</h1>
-        <p>honest review for the products</p>
+        <p>honest review for the products...</p>
         <br></br>
 
         <form onSubmit={loginSubmit}>
