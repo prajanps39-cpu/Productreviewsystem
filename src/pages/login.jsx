@@ -1,15 +1,34 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 function Login(){
-    const[username,setUsername]=useState("");
-    const[email,setEmail]=useState("");
-    const[password,setPassword]=useState("");
+    //const[username,setUsername]=useState("");
+    //const[email,setEmail]=useState("");
+    //const[password,setPassword]=useState("");
+    
+    const navigate = useNavigate()
+
+    const[formdata,setFormdata] = useState({
+        username:"",
+        email:"",
+        password:""
+
+    })
+
+    function handleChange(e){
+        e.preventDefault();
+        setFormdata({
+            ...formdata,
+            [e.target.name]:e.target.value
+        })
+    }
+
+
 
 
 function loginSubmit(e){
     e.preventDefault();
- console.log("Username:",username);
- console.log("Email:",email);
- console.log("Password:",password);
+    console.log(formdata)
+    navigate('/dashboard',{state:formdata})
 }
 
 return(
@@ -20,15 +39,15 @@ return(
 
         <form onSubmit={loginSubmit}>
             <label>UserName:</label>
-            <input type ="text" required placeholder="Enter your usnername." value={username} onChange={(e)=>setUsername(e.target.value)}/>
+            <input type ="text" required placeholder="Enter your usnername." name="username" onChange={handleChange}/>
              <br></br>
               <br></br>
              <label>Email:</label>
-            <input type ="email" required placeholder="Enter your email id." value={email} onChange={(e)=>setEmail(e.target.value)}/>
+            <input type ="email" required placeholder="Enter your email id." name="email" onChange={handleChange}/>
             <br></br>
              <br></br>
             <label>Passcode:</label>
-            <input type ="password" required placeholder="Enter your Password." value={password} onChange={(e)=>setPassword(e.target.value)}/>
+            <input type ="password" required placeholder="Enter your Password." name="password" onChange={handleChange}/>
                <br></br>
                 <br></br>
             <button type = "submit">Login</button>
